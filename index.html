@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="heroApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS Heroes Charge App</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="row">
+  <!--<div class="col-sm-12" ui-view="myfilter">-->
+
+  <!--</div>-->
+  <div class="col-sm-12 main" ui-view="heroes">
+
+  </div>
+</div>
+
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.app/1.3.14/angular-route.app"></script>-->
+<script src="app/app.js"></script>
+<script src="app/heroes/heroCtrl.js"></script>
+<script src="app/services/heroServices.js"></script>
+<script src="app/heroes/create/create-team.js"></script>
+<script src="app/filters/heroFilters.js"></script>
+<script src="app/common/models/heroes-model.js"></script>
+<script src="app/common/models/teams-model.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<h1>{{filterCtrl.title}}</h1>
+
+<!-- Search -->
+Search: <input type="text" ng-model="heroesCtrl.filters.query" placeholder="search heroes"/>
+
+<br/>
+<br/>
+
+<!--SORT BY-->
+<div class="controls">
+
+  <label for="newBookmarkTitle">Sort by</label>
+  <select id="newBookmarkTitle" ng-model="heroesCtrl.descending"
+          ng-options="opt as opt.label for opt in heroesCtrl.options">
+  </select>
+</div>
+
+<!--TAG FILTERS-->
+<div class="clear">
+  <div ng-repeat="tag in heroesCtrl.filters.tags" class="checkbox">
+    <label for="{{tag.label}}">{{tag.label}}</label>
+    <input id="{{tag.label}}" type="checkbox" ng-model="tag.selected" />
+  </div>
+</div>
+
+<!--TEAM ARRAY-->
+<div ui-view="teams" ng-show="heroesCtrl.myHeroes.length > 0">
+
+</div>
+
+<!--PLAYERS-->
+<div>
+  <ul>
+    <!--<li ng-repeat="hero in heroesCtrl.heroes | heroesFilter: filters | orderBy:'pubDate':descending">-->
+    <li ng-repeat="hero in heroesCtrl.heroes | heroesFilter: heroesCtrl.filters |  orderBy:'pubDate':heroesCtrl.descending.value">
+      <h2>{{hero.name}}</h2>
+      <h5>{{hero.attack}}</h5>
+      <p>Release date: {{hero.pubDate | date}}</p>
+      <p>{{hero.description}}</p>
+      <button ng-click="heroesCtrl.addHero(hero)" ui-sref="heroapp.heroes.create({category:hero.name})">Add</button>
+    </li>
+  </ul>
+</div>
