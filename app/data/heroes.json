@@ -55,6 +55,17 @@
       "attack": "Str"
     },
     {
+      "name": "Ryan",
+      "title": "Developer",
+      "description": "Best JS developer I know!",
+      "pubDate": "2015-02-08",
+      "tags": [
+        "strength",
+        "tag5"
+      ],
+      "attack": "strength"
+    },
+    {
       "name": "Todd",
       "title": "Science behind the D-Day landings",
       "description": "How innovations in science and engineering made the D-Day landings possible with giant troop tanks and tanks that could drive on water.",
