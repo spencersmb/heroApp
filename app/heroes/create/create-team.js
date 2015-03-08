@@ -17,6 +17,26 @@ angular.module('team.create',[
   .controller('CreateTeamCtrl', function CreateTeamCtrl(HeroesModel, $stateParams) {
     var createTeamCtrl = this;
 
+    //HEROES added get pushed to array
     createTeamCtrl.myHeroes = HeroesModel.myHeroes;
+
+    //--------------------------------------------------
+    // ADD TEAM
+    //--------------------------------------------------
+
+      //ADD TEAM BUTTON
+      //Return true if team array has 5 players
+      function isTeamFull(){
+        return createTeamCtrl.myHeroes.length >= 5;
+      }
+
+      //REMOVE HERO
+      createTeamCtrl.removeHero = function(hero){
+        var i = createTeamCtrl.myHeroes.indexOf(hero);
+        createTeamCtrl.myHeroes.splice(i,1);
+      };
+
+      //update team with new team
+      createTeamCtrl.isTeamFull = isTeamFull;
   })
 ;

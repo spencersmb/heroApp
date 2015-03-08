@@ -47,9 +47,9 @@ angular.module('hero.services', [])
       ]
     };
 
-      //--------------------------------------------------
-      // HERO ARRAY
-      //--------------------------------------------------
+//--------------------------------------------------
+// HERO ARRAY
+//--------------------------------------------------
 
 
       model.myHeroes = [];
@@ -73,6 +73,8 @@ angular.module('hero.services', [])
 
         console.log(model.myHeroes);
       };
+
+
 
     //instead of just returning the call - return a promise using then for the http call
     //This also checks first if categories exists and if it does wrap it in a promise so you dont make another call to the server

@@ -1,14 +1,14 @@
 
 <h3>My team</h3>
-<div >
-  test
-</div>
-<div ng-show="isTeamFull()">
-  <button>Save Team</button>
-</div>
+
+
 <ul>
   <li ng-repeat="myHero in createTeamCtrl.myHeroes">
     {{myHero.name}}
-    <div ng-click="removeHero(hero)" style="cursor: pointer;">X</div>
+    <div ng-click="createTeamCtrl.removeHero(hero)" style="cursor: pointer;">X</div>
   </li>
 </ul>
+
+<div ng-show="createTeamCtrl.isTeamFull()">
+  <button>Save Team</button>
+</div>
